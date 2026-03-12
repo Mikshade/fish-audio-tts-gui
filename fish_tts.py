@@ -130,7 +130,13 @@ class App(tk.Tk):
         self.status_var = tk.StringVar(value="Bereit.")
         tk.Label(self, textvariable=self.status_var,
                  bg=BG, fg="#a6e3a1",
-                 font=("Segoe UI", 9), anchor="w").pack(fill="x", padx=12, pady=(0, 10))
+                 font=("Segoe UI", 9), anchor="w").pack(fill="x", padx=12, pady=(0, 4))
+
+        # ── Ko-fi ──
+        kofi = tk.Label(self, text="☕ Support on Ko-fi", bg=BG, fg="#f38ba8",
+                        font=("Segoe UI", 9, "underline"), cursor="hand2", anchor="w")
+        kofi.pack(fill="x", padx=12, pady=(0, 10))
+        kofi.bind("<Button-1>", lambda _: __import__("webbrowser").open("https://ko-fi.com/mikshade"))
 
     def _save_settings(self):
         self.cfg["api_key"]  = self.api_key_var.get().strip()
