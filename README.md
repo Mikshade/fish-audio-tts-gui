@@ -22,32 +22,20 @@ No command line needed. Just open it, type your text, click generate.
 
 ## 🚀 Getting Started
 
-### 1. Install Python
-Download Python 3.10+ from [python.org](https://python.org) and install it.
-Make sure to check **"Add Python to PATH"** during installation.
+### Option A — Just use the .exe (Windows, no Python needed)
 
-### 2. Install dependencies
-Open a terminal in the project folder and run:
+1. Go to [Releases](../../releases) and download `FishAudioTTS.exe`
+2. Put it in its own folder (it will create `config.json` and `output/` next to itself)
+3. Double-click and you're done
+
+### Option B — Run from source
+
+1. Install Python 3.10+ from [python.org](https://python.org)
+2. Install dependencies:
 ```
 pip install -r requirements.txt
 ```
-
-### 3. Set up your config
-Copy `config.example.json` and rename it to `config.json`:
-```
-cp config.example.json config.json
-```
-Then open `config.json` and fill in your details:
-```json
-{
-  "api_key": "your_fish_audio_api_key",
-  "voice_id": "the_reference_id_of_your_voice",
-  "bitrate": 128
-}
-```
-
-### 4. Run it
-Double-click `Start.bat` — or run:
+3. Run it:
 ```
 python fish_tts.py
 ```

@@ -3,6 +3,7 @@ Fish Audio TTS Generator
 Stimme einmal setzen, Text eingeben, MP3 generieren.
 """
 
+import sys
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 import json
@@ -11,8 +12,14 @@ import requests
 import threading
 from datetime import datetime
 
-CONFIG_FILE = os.path.join(os.path.dirname(__file__), "config.json")
-OUTPUT_DIR  = os.path.join(os.path.dirname(__file__), "output")
+# When frozen as .exe, use the folder next to the exe — not inside it
+if getattr(sys, "frozen", False):
+    _BASE = os.path.dirname(sys.executable)
+else:
+    _BASE = os.path.dirname(os.path.abspath(__file__))
+
+CONFIG_FILE = os.path.join(_BASE, "config.json")
+OUTPUT_DIR  = os.path.join(_BASE, "output")
 API_URL     = "https://api.fish.audio/v1/tts"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
