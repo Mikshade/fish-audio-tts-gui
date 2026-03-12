@@ -4,6 +4,7 @@ Stimme einmal setzen, Text eingeben, MP3 generieren.
 """
 
 import sys
+import webbrowser
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 import json
@@ -136,7 +137,7 @@ class App(tk.Tk):
         kofi = tk.Label(self, text="☕ Support on Ko-fi", bg=BG, fg="#f38ba8",
                         font=("Segoe UI", 9, "underline"), cursor="hand2", anchor="w")
         kofi.pack(fill="x", padx=12, pady=(0, 10))
-        kofi.bind("<Button-1>", lambda _: __import__("webbrowser").open("https://ko-fi.com/mikshade"))
+        kofi.bind("<Button-1>", lambda _: webbrowser.open("https://ko-fi.com/mikshade"))
 
     def _save_settings(self):
         self.cfg["api_key"]  = self.api_key_var.get().strip()
