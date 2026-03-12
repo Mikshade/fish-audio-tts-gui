@@ -1,0 +1,5 @@
+{
+  "api_key": "YOUR_FISH_AUDIO_API_KEY_HERE",
+  "voice_id": "YOUR_VOICE_REFERENCE_ID_HERE",
+  "bitrate": 128
+}

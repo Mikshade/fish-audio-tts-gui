@@ -1,0 +1,16 @@
+# Personal config with API keys — never upload this!
+config.json
+
+# Generated MP3 output
+output/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Windows stuff
+Thumbs.db
+desktop.ini
+*.lnk
+*.ico
